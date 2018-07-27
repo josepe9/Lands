@@ -30,7 +30,7 @@
             //manera correcta de utilizar el email == ""
             if (string.IsNullOrEmpty(this.Email))
             {
-               // var aa = await DisplayAlert("Error", "You must enter an Email", "Accept");
+                await Application.Current.MainPage.DisplayAlert("Error", "You must enter an Email", "Accept");
                 return;
             }
         }
