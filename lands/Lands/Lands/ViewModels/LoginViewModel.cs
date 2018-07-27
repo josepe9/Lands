@@ -1,6 +1,10 @@
 ﻿namespace Lands.ViewModels
 {
+    using System;
+    using System.Threading.Tasks;
     using System.Windows.Input;
+    using static System.Net.Mime.MediaTypeNames;
+
     public class LoginViewModel
     {
         #region Properties
@@ -18,7 +22,18 @@
         #endregion
 
         #region Commands
-        public ICommand LoginCommand { get; set; }
+        /*incluir el nuget mvvmLightLibs para usar el relayccomand  */
+        public ICommand LoginCommand { get { return new RelayCommand(Login); }}
+
+        private async void Login()
+        {
+            //manera correcta de utilizar el email == ""
+            if (string.IsNullOrEmpty(this.Email))
+            {
+               // var aa = await DisplayAlert("Error", "You must enter an Email", "Accept");
+                return;
+            }
+        }
         #endregion
     }
 }
