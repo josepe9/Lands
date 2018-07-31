@@ -1,7 +1,7 @@
 ﻿namespace Lands.Models
 {
-    using Newtonsoft.Json;
     using System.Collections.Generic;
+    using Newtonsoft.Json;
 
     public class Land
     {
@@ -20,8 +20,8 @@
         [JsonProperty(PropertyName = "callingCodes")]
         public List<string> CallingCodes { get; set; }
 
-        [JsonProperty(PropertyName = "acronym")]
-        public string capital { get; set; }
+        [JsonProperty(PropertyName = "capital")]
+        public string Capital { get; set; }
 
         [JsonProperty(PropertyName = "altSpellings")]
         public List<string> AltSpellings { get; set; }
