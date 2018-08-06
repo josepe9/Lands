@@ -51,13 +51,15 @@
              * prefijo = /rest
              * Controlador = /v2/all  */
             var response = await this.apiService.GetList<Land>(
-                "ttp://www.restcountries.eu",
-                "/rest", 
-                "/v2/all");
+              "http://restcountries.eu",
+              "/rest",
+              "/v2/all");
+
+
             //si conectó y devolvió los valores de la api
             if (!response.IsSuccess)
             {
-                await App.Current.MainPage.DisplayAlert("Error", response.Message, "Accept");
+             //   await App.Current.MainPage.DisplayAlert("Error", response.Message, "Accept");
                 return;
             }
             var list = (List<Land>)response.Result;

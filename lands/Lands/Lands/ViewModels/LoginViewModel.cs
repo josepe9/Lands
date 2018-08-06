@@ -2,6 +2,7 @@
 {
     using Lands.Views;
     using System.Windows.Input;
+    using Xamarin.Forms;
 
     public class LoginViewModel : BaseViewModel
     {
@@ -65,15 +66,26 @@
                 this.Password = string.Empty;
                 return;
             }
-            this.IsRunning = false;
+        /*    this.IsRunning = false;
             this.IsEnabled = true;
             this.Email = string.Empty;
-            this.Password = string.Empty;
+            this.Password = string.Empty;   */
             /* el siguiente código garantiza que se ejecute LandsPage en una sola
              * instancia antes de pintar la vista LandsPage, alineamos la LandsViweModel 
              alineada a ella */
+
+/*            var mainViewModel = MainViewModel.GetInstance();
+            mainViewModel.Lands = new LandsViewModel();
+            await Xamarin.Forms.Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
+            */
+
             MainViewModel.GetInstance().Lands = new LandsViewModel();
-            await App.Current.MainPage.Navigation.PushAsync(new LandsPage());
+            await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
+            this.IsRunning = false;
+            this.IsEnabled = true;
+
+            this.Email = string.Empty;
+            this.Password = string.Empty;
         }
         #endregion
     }

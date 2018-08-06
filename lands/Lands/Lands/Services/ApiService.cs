@@ -16,7 +16,7 @@ namespace Lands.Services
     {
         public async Task<Response> CheckConnection()
         {
-            if (!CrossConnectivity.Current.IsConnected)
+                if (!CrossConnectivity.Current.IsConnected)
             {
                 return new Response
                 {

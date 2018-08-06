@@ -6,9 +6,10 @@
              Title="Lands">
     <ContentPage.Content>
         <StackLayout
-            BindingContext="{Binding Lands}">
-            <ListView 
-               HasUnevenRows="True"
+            BindingContext="{Binding Lands}"
+            Padding="5">
+            <ListView    
+                HasUnevenRows="True"
                 IsPullToRefreshEnabled="True"
                 IsRefreshing="{Binding IsRefreshing,Mode=TwoWay}"
                 ItemsSource="{Binding Lands}"
@@ -25,6 +26,7 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+
             </ListView>
         </StackLayout>
     </ContentPage.Content>
