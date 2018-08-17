@@ -16,7 +16,8 @@ namespace Lands.Services
     {
         public async Task<Response> CheckConnection()
         {
-                if (!CrossConnectivity.Current.IsConnected)
+            //si el teléfono está en modo avión
+            if (!CrossConnectivity.Current.IsConnected)
             {
                 return new Response
                 {
@@ -25,6 +26,7 @@ namespace Lands.Services
                 };
             }
 
+            //si tiene datos o internet pero el telefono no conecta
             var isReachable = await CrossConnectivity.Current.IsRemoteReachable(
                 "google.com");
             if (!isReachable)
